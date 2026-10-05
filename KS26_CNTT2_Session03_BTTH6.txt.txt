@@ -1,0 +1,22 @@
+1. Mô hình DIKW cho "Ví MoMo-Lite"
+ -Data (Dữ liệu thô): Nhật ký giao dịch thô thu thập từ hệ thống (2026-10-05 14:30, -50000 VND, Cafe).
+ -Information (Thông tin): Gán ngữ cảnh phân loại -> "Tháng 10/2026: Đã chi 3.500.000 VND cho Danh mục Ăn uống".
+ -Knowledge (Tri thức): Áp dụng quy định hạn mức -> Nếu Chi tiêu ăn uống > 3.000.000 VND/tháng (vượt hạn mức 16%), thì phát thông báo cảnh báo chi tiêu quá mức.
+ -Wisdom (Trí tuệ): Phân tích AI và tư vấn tài chính $\rightarrow$ Gợi ý người dùng trích 10% thu nhập cố định vào khoản tiết kiệm tự động vào đầu tháng và tự động giảm $20\%$ hạn mức ăn uống tháng tiếp theo.
+2. Mô hình IPO & Tính toán Storage
+ Các module trong kiến trúc IPO
+ -Input (Đầu vào): Luồng giao dịch thanh toán từ ứng dụng, mã API Key đọc từ file cấu hình ẩn .env (Bật File name extensions và Hidden items trong View Options để quản lý).
+ -Process (Xử lý): CPU & RAM nạp mã nguồn, thực thi đối soát, phân loại chi tiêu và chạy thuật toán tính hạn mức tài chính.
+ -Output (Đầu ra): Báo cáo biến động số dư, thông báo cảnh báo và biểu đồ gợi ý tiết kiệm hiển thị trên giao diện người dùng.
+
+Tính toán dung lượng lưu trữ daily
+ -Số lượng giao dịch: 1,000,000 giao dịch/ngày.
+ -Kích thước 1 giao dịch: 1 KB.
+ -Tổng dung lượng/ngày (Bytes):
+        1,000,000 x 1 KB = 1,000,000 KB
+
+ Quy đổi sang Megabytes (MB):
+ -Theo chuẩn Hệ thập phân (1 MB = 1000 KB):
+         1,000,000/1000=1000MB/ngày
+Theo chuẩn Nhị phân/Windows ( 1 MiB = 1024 KiB);
+            1,000,000/1024 = 976.56 MB/ngày
